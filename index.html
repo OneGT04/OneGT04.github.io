@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>许德坚 · 产品设计作品集</title>
+<meta name="description" content="许德坚的产品设计作品集，包含产品设计项目、界面设计与设计思考。">
+<style>
+  :root {
+    --bg: #f6f5f3;
+    --card: #ffffff;
+    --ink: #1c1c1e;
+    --muted: #8a8a8e;
+    --line: #e5e3e0;
+    --accent: #c8552e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  header {
+    padding: 72px 0 40px;
+    text-align: center;
+  }
+  .eyebrow {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-size: clamp(34px, 6vw, 52px);
+    font-weight: 600;
+    letter-spacing: 6px;
+    margin-bottom: 10px;
+  }
+  .subtitle {
+    font-size: 16px;
+    color: var(--muted);
+    letter-spacing: 2px;
+  }
+  .divider {
+    width: 56px; height: 2px;
+    background: var(--accent);
+    margin: 28px auto 24px;
+  }
+  .intro {
+    max-width: 520px;
+    margin: 0 auto;
+    font-size: 15px;
+    color: #55555a;
+  }
+
+  main { padding-bottom: 40px; }
+  .pages { display: grid; gap: 28px; }
+  figure {
+    background: var(--card);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.05);
+    cursor: zoom-in;
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  figcaption {
+    padding: 10px 18px;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  .download {
+    text-align: center;
+    padding: 48px 0 24px;
+  }
+  .btn {
+    display: inline-block;
+    padding: 14px 42px;
+    background: var(--ink);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    transition: background .2s, transform .2s;
+  }
+  .btn:hover { background: var(--accent); transform: translateY(-1px); }
+  .hint { margin-top: 14px; font-size: 13px; color: var(--muted); }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 0 56px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  footer a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+  footer a:hover { color: var(--accent); }
+
+  /* 灯箱 */
+  .lightbox {
+    position: fixed; inset: 0;
+    background: rgba(18,18,20,.94);
+    display: none;
+    align-items: center; justify-content: center;
+    z-index: 100;
+    cursor: zoom-out;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img {
+    max-width: 94vw; max-height: 92vh;
+    border-radius: 6px;
+    cursor: default;
+    box-shadow: 0 10px 60px rgba(0,0,0,.5);
+  }
+  .lb-btn {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    width: 52px; height: 52px;
+    border: none; border-radius: 50%;
+    background: rgba(255,255,255,.1);
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+    transition: background .2s;
+  }
+  .lb-btn:hover { background: rgba(255,255,255,.25); }
+  .lb-prev { left: 18px; }
+  .lb-next { right: 18px; }
+  .lb-close {
+    position: absolute; top: 18px; right: 22px;
+    border: none; background: none;
+    color: #fff; font-size: 30px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 640px) {
+    header { padding: 48px 0 28px; }
+    .lb-btn { width: 42px; height: 42px; font-size: 20px; }
+    .lb-prev { left: 8px; }
+    .lb-next { right: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Portfolio · 作品集</div>
+    <h1>许德坚</h1>
+    <div class="subtitle">产品设计师 · Product Designer</div>
+    <div class="divider"></div>
+    <p class="intro">你好，我是许德坚，一名产品设计师。以下是我近年来的设计项目与思考，欢迎浏览，也欢迎与我交流。</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap pages" id="gallery">
+    <figure><img src="images/page-01.jpg" alt="作品集第 1 页" loading="lazy"><figcaption>01 / 22</figcaption></figure>
+    <figure><img src="images/page-02.jpg" alt="作品集第 2 页" loading="lazy"><figcaption>02 / 22</figcaption></figure>
+    <figure><img src="images/page-03.jpg" alt="作品集第 3 页" loading="lazy"><figcaption>03 / 22</figcaption></figure>
+    <figure><img src="images/page-04.jpg" alt="作品集第 4 页" loading="lazy"><figcaption>04 / 22</figcaption></figure>
+    <figure><img src="images/page-05.jpg" alt="作品集第 5 页" loading="lazy"><figcaption>05 / 22</figcaption></figure>
+    <figure><img src="images/page-06.jpg" alt="作品集第 6 页" loading="lazy"><figcaption>06 / 22</figcaption></figure>
+    <figure><img src="images/page-07.jpg" alt="作品集第 7 页" loading="lazy"><figcaption>07 / 22</figcaption></figure>
+    <figure><img src="images/page-08.jpg" alt="作品集第 8 页" loading="lazy"><figcaption>08 / 22</figcaption></figure>
+    <figure><img src="images/page-09.jpg" alt="作品集第 9 页" loading="lazy"><figcaption>09 / 22</figcaption></figure>
+    <figure><img src="images/page-10.jpg" alt="作品集第 10 页" loading="lazy"><figcaption>10 / 22</figcaption></figure>
+    <figure><img src="images/page-11.jpg" alt="作品集第 11 页" loading="lazy"><figcaption>11 / 22</figcaption></figure>
+    <figure><img src="images/page-12.jpg" alt="作品集第 12 页" loading="lazy"><figcaption>12 / 22</figcaption></figure>
+    <figure><img src="images/page-13.jpg" alt="作品集第 13 页" loading="lazy"><figcaption>13 / 22</figcaption></figure>
+    <figure><img src="images/page-14.jpg" alt="作品集第 14 页" loading="lazy"><figcaption>14 / 22</figcaption></figure>
+    <figure><img src="images/page-15.jpg" alt="作品集第 15 页" loading="lazy"><figcaption>15 / 22</figcaption></figure>
+    <figure><img src="images/page-16.jpg" alt="作品集第 16 页" loading="lazy"><figcaption>16 / 22</figcaption></figure>
+    <figure><img src="images/page-17.jpg" alt="作品集第 17 页" loading="lazy"><figcaption>17 / 22</figcaption></figure>
+    <figure><img src="images/page-18.jpg" alt="作品集第 18 页" loading="lazy"><figcaption>18 / 22</figcaption></figure>
+    <figure><img src="images/page-19.jpg" alt="作品集第 19 页" loading="lazy"><figcaption>19 / 22</figcaption></figure>
+    <figure><img src="images/page-20.jpg" alt="作品集第 20 页" loading="lazy"><figcaption>20 / 22</figcaption></figure>
+    <figure><img src="images/page-21.jpg" alt="作品集第 21 页" loading="lazy"><figcaption>21 / 22</figcaption></figure>
+    <figure><img src="images/page-22.jpg" alt="作品集第 22 页" loading="lazy"><figcaption>22 / 22</figcaption></figure>
+  </div>
+
+  <div class="download">
+    <div class="wrap">
+      <a class="btn" href="xu-dejian-portfolio.pdf" download>下载完整作品集 PDF</a>
+      <p class="hint">点击任意页面可放大查看 · 手机访问体验更佳</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 许德坚 · 产品设计作品集 &nbsp;|&nbsp; <a href="https://github.com/OneGT04" target="_blank" rel="noopener">GitHub: OneGT04</a></p>
+  </div>
+</footer>
+
+<!-- 灯箱 -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="关闭">&times;</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="上一页">&#8249;</button>
+  <img id="lbImg" src="" alt="放大查看">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="下一页">&#8250;</button>
+</div>
+
+<script>
+(function () {
+  var figures = document.querySelectorAll('#gallery figure');
+  var imgs = Array.prototype.map.call(figures, function (f) { return f.querySelector('img'); });
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var current = 0;
+
+  function open(i) {
+    current = (i + imgs.length) % imgs.length;
+    lbImg.src = imgs[current].src;
+    lbImg.alt = imgs[current].alt;
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+  }
+  function close() {
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+  }
+  function step(d) { open(current + d); }
+
+  imgs.forEach(function (img, i) {
+    img.addEventListener('click', function () { open(i); });
+  });
+  document.getElementById('lbClose').addEventListener('click', function (e) { e.stopPropagation(); close(); });
+  document.getElementById('lbPrev').addEventListener('click', function (e) { e.stopPropagation(); step(-1); });
+  document.getElementById('lbNext').addEventListener('click', function (e) { e.stopPropagation(); step(1); });
+  lb.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
+  });
+})();
+</script>
+</body>
+</html>
